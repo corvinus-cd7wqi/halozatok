@@ -1,0 +1,31 @@
+﻿body { 
+}
+h1, h2, h3, h4, h5, h6 {
+text-align:center;
+}
+img {
+    max-width: 100%;
+    margin: auto;
+    display: block;
+    border-radius: 150px;
+    border:solid 5px red;
+}
+li:hover {
+    color:blueviolet;
+    animation:color-change 2s infinite;
+    transition: 1s;
+    cursor: pointer;
+    font-size:40px;
+}
+@keyframes color-change {
+    0% {
+        color: red;
+    }
+
+    50% {
+        color: blueviolet;
+    }
+
+    100% {
+        color: green;
+    }
