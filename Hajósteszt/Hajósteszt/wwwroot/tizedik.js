@@ -74,10 +74,10 @@ function kérdésBetöltés(questionNumber, destination)
 function kérdésMegjelenítés() {
     let kérdés = hotList[displayedQuestion].question;
     document.getElementById("kérdés_szöveg").innerText = kérdés.questionText;
-    document.getElementById("válasz1").innerText = kérdés.answer1;
-    document.getElementById("válasz2").innerText = kérdés.answer2;
-    document.getElementById("válasz3").innerText = kérdés.answer3;
-    document.getElementById("válasz3").innerText = kérdés.answer3;
+    document.getElementById("valasz1").innerText = kérdés.answer1;
+    document.getElementById("valasz2").innerText = kérdés.answer2;
+    document.getElementById("valasz3").innerText = kérdés.answer3;
+    document.getElementById("valasz3").innerText = kérdés.answer3;
     if (kérdés.image) {
         document.getElementById("kép").src = kérdés.image;
         document.getElementById("kép").style.display = "block";
@@ -87,7 +87,7 @@ function kérdésMegjelenítés() {
 
     }
 
-    for (var i = 1; i <= 3; i++) document.getElementById("válasz" + i).classList.remove("jó", "rossz")
+    for (var i = 1; i <= 3; i++) document.getElementById("valasz" + i).classList.remove("jó", "rossz")
     document.getElementById("válaszok").style.pointerEvents = "auto";
 
     
@@ -105,9 +105,10 @@ function hátra() {
     kérdésMegjelenítés();  
 }
 function választás(n) {
+    console.log("teszt");
     let kérdés = hotList[displayedQuestion].question
     if (n === kérdés.correctAnswer) {
-        document.getElementById("válasz" + n).classList.add("jó")
+        document.getElementById("valasz" + n).classList.add("jó")
         hotList[displayedQuestion].goodAnswers++;
         if (hotList[displayedQuestion].goodAnswers === 3) {
             kérdésBetöltés(nextQuestion, displayedQuestion);
@@ -116,8 +117,8 @@ function választás(n) {
         }
     }
     else {
-        document.getElementById("válasz" + n).classList.add("rossz")
-        document.getElementById("válasz" + kérdés.correctAnswer).classList.add("jó")
+        document.getElementById("valasz" + n).classList.add("rossz")
+        document.getElementById("valasz" + kérdés.correctAnswer).classList.add("jó")
         hotList[displayedQuestion].goodAnswers=0;
     }
     document.getElementById("válaszok").style.pointerEvents = "none";

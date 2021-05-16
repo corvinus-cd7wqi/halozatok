@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Hajósteszt.Controllers
 {
-    [Route("api/[controller]")]
+   // [Route("api/[controller]")]
     [ApiController]
     public class QuestionController : ControllerBase
     {
